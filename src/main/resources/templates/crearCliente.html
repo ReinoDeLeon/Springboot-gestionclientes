@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout/layout :: head">
+</head>
+
+<body>
+    <nav th:replace="layout/layout :: header"></nav>
+    <div class="container py-4">
+        <div class="card bg-light">
+            <div class="card-header">
+                <h1 th:text="${titulo}"></h1>
+            </div>
+            <div class="card-body">
+                <form th:action="@{/form}" method="post" th:object="${cliente}" enctype="multipart/form-data">
+
+                    <div class="form-group row mt-1 mb-1">
+                        <label class="col-sm-2 col-form-label">Nombre:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" th:field="*{nombre}"
+                                th:errorclass="'bg-danger bg-opacity-25'">
+                            <label class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}"
+                                th:errors="*{nombre}"></label>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-1 mb-1">
+                        <label class="col-sm-2 col-form-label">Apellido:</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" th:field="*{apellido}"
+                                th:errorclass="'bg-danger bg-opacity-25'">
+                            <label class="form-text text-danger" th:if="${#fields.hasErrors('apellido')}"
+                                th:errors="*{apellido}"></label>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-1 mb-1">
+                        <label class="col-sm-2 col-form-label">Email:</label>
+                        <div class="col-sm-6">
+                            <input type="email" th:field="*{email}" class="form-control" id="exampleFormControlInput1"
+                                placeholder="name@example.com" th:errorclass="'bg-danger bg-opacity-25'">
+                            <label class="form-text text-danger" th:if="${#fields.hasErrors('email')}"
+                                th:errors="*{email}"></label>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-1 mb-1">
+                        <label class="col-sm-2 col-form-label">Fecha Creacion:</label>
+                        <div class="col-sm-6">
+                            <input type="text" th:field="*{createdAt}" class="form-control"
+                                th:errorclass="'bg-danger bg-opacity-25'">
+                            <label class="form-text text-danger" th:if="${#fields.hasErrors('createdAt')}"
+                                th:errors="*{createdAt}"></label>
+                        </div>
+                    </div>
+                    <div class="form-group row mt-1 mb-1">
+                        <label for="file" class="col-sm-2 col-form-label">Foto:</label>
+                        <div class="col-sm-6">
+                            <input type="file" name="file" class="form-control"
+                               >
+                        </div>
+                    </div>
+                    <button class="btn btn-success" type="submit">Guardar<i class='bi bi-hdd ms-1 me-1'></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer th:replace="layout/layout :: footer"></footer>
+</body>
+
+</html>
