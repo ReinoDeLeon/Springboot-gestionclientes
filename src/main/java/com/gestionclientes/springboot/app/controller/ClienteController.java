@@ -1,4 +1,4 @@
-package com.bolsadeideas.springboot.app.controller;
+package com.gestionclientes.springboot.app.controller;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -22,10 +22,10 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.bolsadeideas.springboot.app.controller.paginator.PageRender;
-import com.bolsadeideas.springboot.app.models.entity.Cliente;
-import com.bolsadeideas.springboot.app.models.service.ClienteService;
-import com.bolsadeideas.springboot.app.models.service.FotoService;
+import com.gestionclientes.springboot.app.controller.paginator.PageRender;
+import com.gestionclientes.springboot.app.models.entity.Cliente;
+import com.gestionclientes.springboot.app.models.service.ClienteService;
+import com.gestionclientes.springboot.app.models.service.FotoService;
 
 import jakarta.validation.Valid;
 

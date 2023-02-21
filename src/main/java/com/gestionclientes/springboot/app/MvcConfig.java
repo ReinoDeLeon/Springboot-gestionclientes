@@ -1,5 +1,5 @@
 
-package com.bolsadeideas.springboot.app;
+package com.gestionclientes.springboot.app;
 
 import java.nio.file.Paths;
 
